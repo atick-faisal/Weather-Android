@@ -1,2 +1,2 @@
-# Weather Android
+## Simple Weather app for Android
 
