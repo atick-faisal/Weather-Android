@@ -158,8 +158,7 @@ public class MainActivity extends AppCompatActivity {
                     BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
                     StringBuilder stringBuilder = new StringBuilder();
                     String line;
-                    while ((line = bufferedReader.readLine()) != null)
-                    {
+                    while ((line = bufferedReader.readLine()) != null)  {
                         stringBuilder.append(line).append("\n");
                     }
                     update = stringBuilder.toString();

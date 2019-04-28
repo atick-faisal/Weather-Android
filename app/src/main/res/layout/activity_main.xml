@@ -83,6 +83,7 @@
 
     </FrameLayout>
 
+
     <TextView
         android:id="@+id/clock"
         android:layout_width="wrap_content"
@@ -155,5 +156,6 @@
             android:src="@drawable/map_marker" />
 
     </LinearLayout>
+
 
 </LinearLayout>
