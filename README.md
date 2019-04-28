@@ -3,8 +3,6 @@
 
 <p align="center">
   <br>
-  <br>
-  <br>
   <img src="https://openweathermap.org/themes/openweathermap/assets/vendor/owm/img/logo_OpenWeatherMap_orange.svg" width="700"/>
   </p>
   
