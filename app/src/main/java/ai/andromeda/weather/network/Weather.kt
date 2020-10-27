@@ -3,8 +3,30 @@ package ai.andromeda.weather.network
 import com.google.gson.annotations.SerializedName
 
 data class Weather(
+    @SerializedName("name")
+    val cityName: String,
+
+    @SerializedName("weather")
+    val status: List<Status>,
+
     @SerializedName("main")
-    val current: Current
+    val current: Current,
+
+    val visibility: Long,
+    val wind: Wind,
+
+    @SerializedName("sys")
+    val sun: Sun
+)
+
+data class Status(
+    val id: Long,
+
+    @SerializedName("main")
+    val condition: String,
+
+    val description: String,
+    val icon: String
 )
 
 data class Current(
@@ -16,9 +38,12 @@ data class Current(
     val humidity: Double
 )
 
-//"temp":305.15,
-//"feels_like":307.46,
-//"temp_min":305.15,
-//"temp_max":305.15,
-//"pressure":1008,
-//"humidity":52
+data class Wind(
+    val speed: Double,
+    val deg: Double
+)
+
+data class Sun(
+    val sunrise: Long,
+    val sunset: Long
+)
