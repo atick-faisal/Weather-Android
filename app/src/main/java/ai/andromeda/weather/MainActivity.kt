@@ -16,19 +16,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         OpenWeatherApi
-            .RetrofitService
-            .fetch(cityName = "Dhaka,BD")
-            .enqueue(
-            object: Callback<Weather> {
-                override fun onResponse(call: Call<Weather>, response: Response<Weather>) {
-                    Log.i(Config.LOG_TAG, response.body().toString())
-                }
+                .RetrofitService
+                .fetch(cityName = "Dhaka,BD")
+                .enqueue(
+                        object : Callback<Weather> {
+                            override fun onResponse(call: Call<Weather>, response: Response<Weather>) {
+                                Log.i(Config.LOG_TAG, response.body().toString())
+                            }
 
-                override fun onFailure(call: Call<Weather>, t: Throwable) {
-                    Log.i(Config.LOG_TAG, "FAILED: ${t.message}")
-                }
+                            override fun onFailure(call: Call<Weather>, t: Throwable) {
+                                Log.i(Config.LOG_TAG, "FAILED: ${t.message}")
+                            }
 
-            }
-        )
+                        }
+                )
     }
 }
