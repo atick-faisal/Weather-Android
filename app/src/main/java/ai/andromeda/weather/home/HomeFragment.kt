@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.home_fragment.view.*
 
 class HomeFragment : Fragment() {
 
@@ -23,8 +25,17 @@ class HomeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
+        val application = requireNotNull(this.activity).application
 
+        //----------------- VIEW MODEL SETUP -------------------//
+        val viewModelFactory = HomeViewModelFactory(application)
+        viewModel = ViewModelProvider(this, viewModelFactory)
+            .get(HomeViewModel::class.java)
+
+        viewModel.weather.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                rootView.apiResponseText.text = it.toString()
+            }
+        })
     }
-
 }

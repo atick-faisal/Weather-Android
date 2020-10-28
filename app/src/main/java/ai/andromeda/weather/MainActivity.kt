@@ -3,21 +3,18 @@ package ai.andromeda.weather
 import ai.andromeda.weather.config.Config
 import ai.andromeda.weather.network.OpenWeatherApi
 import ai.andromeda.weather.network.Weather
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
-import androidx.navigation.findNavController
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupWithNavController
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.NullPointerException
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,25 +26,5 @@ class MainActivity : AppCompatActivity() {
             supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         val navController = navHostFragment.navController
         bottomNavigation.setupWithNavController(navController)
-
-        val call = OpenWeatherApi
-                .RetrofitService
-                .fetch(
-                        lat = 23.77,
-                        lon = 90.42
-                )
-
-        call.enqueue(
-                object : Callback<Weather> {
-                    override fun onResponse(call: Call<Weather>, response: Response<Weather>) {
-                        Log.i(Config.LOG_TAG, response.body().toString())
-                    }
-
-                    override fun onFailure(call: Call<Weather>, t: Throwable) {
-                        Log.i(Config.LOG_TAG, "FAILED: ${t.message}")
-                    }
-
-                }
-        )
     }
 }
