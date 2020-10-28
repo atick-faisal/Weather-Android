@@ -15,20 +15,24 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        OpenWeatherApi
+        val call = OpenWeatherApi
                 .RetrofitService
-                .fetch(cityName = "Dhaka,BD")
-                .enqueue(
-                        object : Callback<Weather> {
-                            override fun onResponse(call: Call<Weather>, response: Response<Weather>) {
-                                Log.i(Config.LOG_TAG, response.body().toString())
-                            }
-
-                            override fun onFailure(call: Call<Weather>, t: Throwable) {
-                                Log.i(Config.LOG_TAG, "FAILED: ${t.message}")
-                            }
-
-                        }
+                .fetch(
+                        lat = 23.77,
+                        lon = 90.42
                 )
+
+        call.enqueue(
+                object : Callback<Weather> {
+                    override fun onResponse(call: Call<Weather>, response: Response<Weather>) {
+                        Log.i(Config.LOG_TAG, response.body().toString())
+                    }
+
+                    override fun onFailure(call: Call<Weather>, t: Throwable) {
+                        Log.i(Config.LOG_TAG, "FAILED: ${t.message}")
+                    }
+
+                }
+        )
     }
 }

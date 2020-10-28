@@ -8,7 +8,7 @@ data class Weather(
         @SerializedName("weather")
         val status: List<Status>,
         val current: Current,
-
+        val hourly: List<Hourly>
 )
 
 data class Current(
