@@ -4,16 +4,19 @@
 
     <item
         android:id="@+id/worldFragment"
-        android:title="World"
-        app:showAsAction="ifRoom"/>
+        android:title="Explore"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_explore"/>
 
     <item
         android:id="@+id/homeFragment"
-        android:title="Home"
-        app:showAsAction="ifRoom"/>
+        android:title="Current"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_current"/>
 
     <item
         android:id="@+id/weekFragment"
-        android:title="Week"
-        app:showAsAction="ifRoom"/>
+        android:title="This Week"
+        app:showAsAction="ifRoom"
+        android:icon="@drawable/ic_week"/>
 </menu>
