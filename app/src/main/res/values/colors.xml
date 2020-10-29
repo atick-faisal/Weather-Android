@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#FF7043</color>
+    <color name="colorPrimary">#673AB7</color>
     <color name="colorPrimaryDark">#FAFAFA</color>
-    <color name="colorPrimaryVariant">#FF8A65</color>
+    <color name="colorPrimaryVariant">#5C6BC0</color>
     <color name="colorOnPrimary">#FAFAFA</color>
     <color name="colorSecondary">#FF7043</color>
     <color name="colorSecondaryVariant">#FF8A65</color>
@@ -21,4 +21,5 @@
     <color name="afternoonDark">#512DA8 </color>
     <color name="night">#607D8B </color>
     <color name="nightDark">#455A64</color>
+    <color name="lightPrimary">#E8EAF6</color>
 </resources>

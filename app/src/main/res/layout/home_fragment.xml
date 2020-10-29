@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:padding="8dp"
+    android:paddingLeft="8dp"
+    android:paddingRight="8dp"
     tools:context=".home.HomeFragment">
 
     <com.google.android.material.textview.MaterialTextView
@@ -192,5 +193,95 @@
             tools:text="23.0 C" />
 
     </RelativeLayout>
+
+    <TextView
+        android:id="@+id/additionalInfoTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/additional_info"
+        android:textColor="@color/colorOnSurface"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_below="@id/morningCard"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="24dp"/>
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/additionalInfoTitle"
+        android:paddingTop="16dp"
+        android:paddingBottom="8dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:rowCount="2"
+        android:columnCount="4">
+
+        <TextView
+            android:layout_row="0"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp"
+            android:textColor="@color/colorOnSurface"
+            android:text="Wind"/>
+
+        <TextView
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:text="10km/h"/>
+
+        <TextView
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:textStyle="bold"
+            android:textColor="@color/colorOnSurface"
+            android:text="Humidity"/>
+
+        <TextView
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:text="88.0%"/>
+
+        <TextView
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_columnWeight="1"
+            android:textStyle="bold"
+            android:textColor="@color/colorOnSurface"
+            android:text="Visibility"/>
+
+        <TextView
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:text="100Km"/>
+
+        <TextView
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_columnWeight="1"
+            android:textStyle="bold"
+            android:textColor="@color/colorOnSurface"
+            android:text="UV"/>
+
+        <TextView
+            android:layout_row="1"
+            android:layout_column="3"
+            android:layout_columnWeight="1"
+            android:text="1.0"/>
+
+    </GridLayout>
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/weatherChart"
+        android:layout_width="match_parent"
+        android:layout_height="96dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="0dp"
+        android:padding="0dp"/>
 
 </RelativeLayout>
