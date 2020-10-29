@@ -16,6 +16,7 @@ class AppDatabase(context: Context) {
         context.getSharedPreferences(Config.PREFERENCE_NAME, Context.MODE_PRIVATE)
 
     private val currentWeather = MutableLiveData<Weather>()
+    private val currentLocation = MutableLiveData<String>()
 
     suspend fun updateWeather(weather: Weather) {
         withContext(Dispatchers.IO) {
@@ -25,9 +26,20 @@ class AppDatabase(context: Context) {
         }
     }
 
+    fun updateLocation(location: String) {
+        currentLocation.postValue(location)
+        database.edit().putString(Config.LOCATION_KEY, location).apply()
+    }
+
     fun getWeather(): LiveData<Weather> {
         val data = database.getString(Config.WEATHER_KEY, "")
         currentWeather.value = gson.fromJson(data, Weather::class.java)
         return currentWeather
+    }
+
+    fun getLocation(): LiveData<String> {
+        val data = database.getString(Config.LOCATION_KEY, null)
+        currentLocation.value = data
+        return currentLocation
     }
 }

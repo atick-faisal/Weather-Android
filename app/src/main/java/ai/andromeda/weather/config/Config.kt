@@ -6,4 +6,5 @@ object Config {
     const val API_KEY = "85986e3adcf28b5eca7955b6edf7a67c"
     const val PREFERENCE_NAME = "AI.ANDROMEDA.WEATHER.DATABASE"
     const val WEATHER_KEY = "AI.ANDROMEDA.WEATHER.KEY"
+    const val LOCATION_KEY = "AI.ANDROMEDA.LOCATION.KEY"
 }

@@ -32,7 +32,13 @@ class HomeFragment : Fragment() {
         viewModel = ViewModelProvider(this, viewModelFactory)
             .get(HomeViewModel::class.java)
 
-        viewModel.weather.observe(viewLifecycleOwner, Observer {
+        viewModel.location.observe(viewLifecycleOwner, {
+            it?.let {
+                viewModel.refreshWeather()
+            }
+        })
+
+        viewModel.weather.observe(viewLifecycleOwner, {
             it?.let {
                 rootView.apiResponseText.text = it.toString()
             }
