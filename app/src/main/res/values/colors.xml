@@ -3,7 +3,7 @@
     <color name="colorPrimary">#FF7043</color>
     <color name="colorPrimaryDark">#FAFAFA</color>
     <color name="colorPrimaryVariant">#FF8A65</color>
-    <color name="colorOnPrimary">#424242</color>
+    <color name="colorOnPrimary">#FAFAFA</color>
     <color name="colorSecondary">#FF7043</color>
     <color name="colorSecondaryVariant">#FF8A65</color>
     <color name="colorOnSecondary">#FAFAFA</color>
@@ -13,4 +13,12 @@
     <color name="colorOnSurface">#424242</color>
     <color name="colorBackground">#FAFAFA</color>
     <color name="colorOnBackground">#424242</color>
+
+    <!-- ~~~~~~~~~Extra Colors~~~~~~~~~~~~ -->
+    <color name="morning">#FF7043</color>
+    <color name="morningDark">#D84315</color>
+    <color name="afternoon">#7E57C2 </color>
+    <color name="afternoonDark">#512DA8 </color>
+    <color name="night">#607D8B </color>
+    <color name="nightDark">#455A64</color>
 </resources>

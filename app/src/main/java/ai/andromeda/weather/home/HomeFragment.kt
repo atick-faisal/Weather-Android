@@ -40,7 +40,7 @@ class HomeFragment : Fragment() {
 
         viewModel.weather.observe(viewLifecycleOwner, {
             it?.let {
-                rootView.apiResponseText.text = it.toString()
+                // rootView.apiResponseText.text = it.toString()
             }
         })
     }

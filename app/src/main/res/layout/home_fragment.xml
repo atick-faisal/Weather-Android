@@ -3,13 +3,194 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="8dp"
     tools:context=".home.HomeFragment">
 
-    <TextView
-        android:id="@+id/apiResponseText"
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/titleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Home Fragment"
-        android:layout_centerInParent="true"/>
+        android:layout_centerHorizontal="true"
+        android:text="@string/weather_forecast"
+        android:textColor="@color/colorOnSurface"
+        android:layout_marginTop="8dp"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Weather Forecast" />
+
+    <ImageView
+        android:id="@+id/forecastIcon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_below="@+id/titleText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:src="@drawable/partlycloudy"
+        tools:src="@drawable/partlycloudy" />
+
+    <TextView
+        android:id="@+id/temperatureText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forecastIcon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="30.0 C"
+        android:textColor="@color/colorOnSurface"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        tools:text="30.0 C" />
+
+    <TextView
+        android:id="@+id/locationText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/temperatureText"
+        android:layout_centerHorizontal="true"
+        android:textSize="18sp"
+        android:text="Rajpara, Rajshahi"
+        tools:text="Rajpara, Rajshahi" />
+
+    <RelativeLayout
+        android:id="@+id/afternoonCard"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/afternoon_card">
+
+        <TextView
+            android:id="@+id/afternoonTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="17:00"
+            android:textColor="@color/colorOnPrimary"
+            android:textStyle="bold"
+            tools:text="17:00" />
+
+        <ImageView
+            android:id="@+id/afternoonForecastIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/afternoonTimeText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            app:srcCompat="@drawable/ic_sunset"
+            tools:srcCompat="@drawable/ic_sunset" />
+
+        <TextView
+            android:id="@+id/afternoonTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/afternoonForecastIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="27.0 C"
+            android:textColor="@color/colorOnPrimary"
+            android:textStyle="bold"
+            tools:text="27.0 C" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/morningCard"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationText"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toStartOf="@id/afternoonCard"
+        android:background="@drawable/morning_card">
+
+        <TextView
+            android:id="@+id/morningTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="6.00"
+            android:textColor="@color/colorOnPrimary"
+            android:textStyle="bold"
+            tools:text="6:00" />
+
+        <ImageView
+            android:id="@+id/morningForecastIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/morningTimeText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            app:srcCompat="@drawable/ic_sunrise"
+            tools:srcCompat="@drawable/ic_sunrise" />
+
+        <TextView
+            android:id="@+id/morningTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/morningForecastIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-condensed"
+            android:text="22.0 C"
+            android:textColor="@color/colorOnPrimary"
+            android:textStyle="bold"
+            tools:text="22.0 C" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/nightCard"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/locationText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/afternoonCard"
+        android:background="@drawable/night_card">
+
+        <TextView
+            android:id="@+id/nightTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/colorOnPrimary"
+            android:textStyle="bold"
+            android:text="22:00"
+            tools:text="22:00" />
+
+        <ImageView
+            android:id="@+id/nightForecastIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/nightTimeText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            app:srcCompat="@drawable/ic_night"
+            tools:srcCompat="@drawable/ic_night" />
+
+        <TextView
+            android:id="@+id/nightTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nightForecastIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorOnPrimary"
+            android:textStyle="bold"
+            android:text="23.0 C"
+            tools:text="23.0 C" />
+
+    </RelativeLayout>
 
 </RelativeLayout>
