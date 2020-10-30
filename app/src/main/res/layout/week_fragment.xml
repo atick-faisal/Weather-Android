@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="8dp"
-        android:text="Friday"
         android:textColor="@color/colorOnSurface"
         android:textSize="20sp"
         android:textStyle="bold" />
@@ -35,7 +34,6 @@
         android:layout_below="@id/forecastIcon"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="4dp"
-        android:text="Haze"
         android:textColor="@color/colorOnSurface"
         android:textSize="16sp"
         android:textStyle="bold"
@@ -48,7 +46,6 @@
         android:layout_below="@id/weatherDescription"
         android:layout_centerHorizontal="true"
         android:fontFamily="sans-serif-condensed"
-        android:text="↑ 30.0 C ↓ 21.9 C"
         android:textColor="@color/colorOnSurface"
         android:textSize="32sp"
         android:textStyle="bold"
@@ -214,7 +211,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:text="Sunday"
             android:textColor="@color/colorOnSurface"
             android:textStyle="bold" />
 
@@ -227,7 +223,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="@string/weather_icon"
-            app:srcCompat="@drawable/ic_01d"
             tools:srcCompat="@drawable/ic_01d" />
 
     </RelativeLayout>
@@ -251,7 +246,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:text="Sunday"
             android:textColor="@color/colorOnSurface"
             android:textStyle="bold" />
 
@@ -264,7 +258,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="@string/weather_icon"
-            app:srcCompat="@drawable/ic_01d"
             tools:srcCompat="@drawable/ic_01d" />
 
     </RelativeLayout>
@@ -288,7 +281,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:text="Sunday"
             android:textColor="@color/colorOnSurface"
             android:textStyle="bold" />
 
@@ -301,7 +293,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="@string/weather_icon"
-            app:srcCompat="@drawable/ic_02d"
             tools:srcCompat="@drawable/ic_01d" />
 
     </RelativeLayout>
@@ -324,7 +315,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:text="Sunday"
             android:textColor="@color/colorOnSurface"
             android:textStyle="bold" />
 
@@ -337,7 +327,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="@string/weather_icon"
-            app:srcCompat="@drawable/ic_02d"
             tools:srcCompat="@drawable/ic_01d" />
 
     </RelativeLayout>
@@ -360,7 +349,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:text="Sunday"
             android:textColor="@color/colorOnSurface"
             android:textStyle="bold" />
 
@@ -373,7 +361,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="@string/weather_icon"
-            app:srcCompat="@drawable/ic_02d"
             tools:srcCompat="@drawable/ic_01d" />
 
     </RelativeLayout>
@@ -396,7 +383,6 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="8dp"
-            android:text="Sunday"
             android:textColor="@color/colorOnSurface"
             android:textStyle="bold" />
 
@@ -409,7 +395,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:contentDescription="@string/weather_icon"
-            app:srcCompat="@drawable/ic_02d"
             tools:srcCompat="@drawable/ic_01d" />
 
     </RelativeLayout>

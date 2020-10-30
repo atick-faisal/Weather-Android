@@ -1,7 +1,7 @@
 package ai.andromeda.weather.database
 
 import ai.andromeda.weather.config.Config
-import ai.andromeda.weather.network.Weather
+import ai.andromeda.weather.models.Weather
 import android.content.Context
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

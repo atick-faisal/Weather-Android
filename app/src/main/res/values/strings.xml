@@ -20,4 +20,5 @@
     <string name="night">Night</string>
     <string name="weather_icon">Weather Icon</string>
     <string name="upcoming_48_hour_temperature">Upcoming 48 hour Temperature</string>
+    <string name="high_low_temp">↑ %.1f °C ↓ %.1f °C</string>
 </resources>

@@ -2,8 +2,6 @@ package ai.andromeda.weather.repository
 
 import ai.andromeda.weather.config.Config
 import ai.andromeda.weather.database.AppDatabase
-import ai.andromeda.weather.network.OpenWeatherApi
-import ai.andromeda.weather.network.Weather
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context

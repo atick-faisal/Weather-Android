@@ -3,9 +3,8 @@ package ai.andromeda.weather.repository
 import ai.andromeda.weather.config.Config
 import ai.andromeda.weather.database.AppDatabase
 import ai.andromeda.weather.network.OpenWeatherApi
-import ai.andromeda.weather.network.Weather
+import ai.andromeda.weather.models.Weather
 import android.content.Context
-import android.graphics.Bitmap
 import android.util.Log
 import androidx.lifecycle.LiveData
 import kotlinx.coroutines.Dispatchers
@@ -25,7 +24,7 @@ class WeatherRepository(context: Context) {
                     lon = latLong[1].toDouble()
                 )
                 weather?.let {
-                    Log.i(Config.LOG_TAG, "NETWORK: $weather")
+                    Log.i(Config.LOG_TAG, "NETWORK: ${weather.daily.size}")
                     database.updateWeather(weather)
                 }
             } catch (e: Exception) {

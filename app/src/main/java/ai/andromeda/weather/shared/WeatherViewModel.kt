@@ -1,8 +1,8 @@
-package ai.andromeda.weather.home
+package ai.andromeda.weather.shared
 
 import ai.andromeda.weather.R
 import ai.andromeda.weather.config.Config
-import ai.andromeda.weather.network.Weather
+import ai.andromeda.weather.models.Weather
 import ai.andromeda.weather.repository.LocationRepository
 import ai.andromeda.weather.repository.WeatherRepository
 import android.app.Application
@@ -17,7 +17,7 @@ import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
 import kotlinx.coroutines.launch
 
-class HomeViewModel(application: Application) : AndroidViewModel(application) {
+class WeatherViewModel(application: Application) : AndroidViewModel(application) {
 
     private val chartColor = ContextCompat.getColor(
         application, R.color.colorPrimary

@@ -1,4 +1,4 @@
-package ai.andromeda.weather.network
+package ai.andromeda.weather.models
 
 import com.google.gson.annotations.SerializedName
 
@@ -6,7 +6,8 @@ data class Weather(
         @SerializedName("timezone")
         val timeZone: String,
         val current: Current,
-        val hourly: List<Hourly>
+        val hourly: List<Hourly>,
+        val daily: List<Daily>
 )
 
 data class Current(
@@ -51,6 +52,20 @@ data class Hourly(
         val precipitation: Double,
         @SerializedName("weather")
         val status: List<Status>
+)
+
+data class Daily(
+        val temp: Temp,
+        @SerializedName("weather")
+        val status: List<Status>
+)
+
+data class Temp(
+        val min: Double,
+        val max: Double,
+        val morn: Double,
+        val eve: Double,
+        val night: Double
 )
 
 data class Status(

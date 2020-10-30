@@ -1,10 +1,10 @@
 package ai.andromeda.weather.home
 
 import ai.andromeda.weather.*
-import ai.andromeda.weather.config.Config
-import ai.andromeda.weather.network.Weather
+import ai.andromeda.weather.models.Weather
+import ai.andromeda.weather.shared.WeatherViewModel
+import ai.andromeda.weather.shared.WeatherViewModelFactory
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.home_fragment.view.*
 
 class HomeFragment : Fragment() {
 
-    private lateinit var viewModel: HomeViewModel
+    private lateinit var viewModel: WeatherViewModel
     private lateinit var rootView: View
 
     override fun onCreateView(
@@ -33,9 +33,9 @@ class HomeFragment : Fragment() {
         val application = requireNotNull(this.activity).application
 
         //----------------- VIEW MODEL SETUP -------------------//
-        val viewModelFactory = HomeViewModelFactory(application)
+        val viewModelFactory = WeatherViewModelFactory(application)
         viewModel = ViewModelProvider(requireNotNull(this.activity), viewModelFactory)
-            .get(HomeViewModel::class.java)
+            .get(WeatherViewModel::class.java)
 
         viewModel.location.observe(viewLifecycleOwner, {
             it?.let {
