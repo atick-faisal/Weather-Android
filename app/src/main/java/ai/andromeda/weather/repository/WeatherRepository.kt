@@ -25,7 +25,7 @@ class WeatherRepository(context: Context) {
                     lon = latLong[1].toDouble()
                 )
                 weather?.let {
-                    Log.i(Config.LOG_TAG, "$weather")
+                    Log.i(Config.LOG_TAG, "NETWORK: $weather")
                     database.updateWeather(weather)
                 }
             } catch (e: Exception) {

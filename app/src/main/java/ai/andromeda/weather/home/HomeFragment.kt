@@ -34,7 +34,7 @@ class HomeFragment : Fragment() {
 
         //----------------- VIEW MODEL SETUP -------------------//
         val viewModelFactory = HomeViewModelFactory(application)
-        viewModel = ViewModelProvider(this, viewModelFactory)
+        viewModel = ViewModelProvider(requireNotNull(this.activity), viewModelFactory)
             .get(HomeViewModel::class.java)
 
         viewModel.location.observe(viewLifecycleOwner, {
@@ -92,8 +92,6 @@ class HomeFragment : Fragment() {
             val humidity = weather.current.humidity
             val visibility = weather.current.visibility
             val uvIndex = weather.current.uvIndex
-
-            Log.i(Config.LOG_TAG, "WIND: $wind")
 
             rootView.forecastIcon.setImageResource(forecastIcon)
             rootView.weatherDescription.text = weatherDescription

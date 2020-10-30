@@ -19,4 +19,5 @@
     <string name="morning">Morning</string>
     <string name="night">Night</string>
     <string name="weather_icon">Weather Icon</string>
+    <string name="upcoming_48_hour_temperature">Upcoming 48 hour Temperature</string>
 </resources>

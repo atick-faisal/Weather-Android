@@ -1,10 +1,12 @@
 package ai.andromeda.weather.home
 
 import ai.andromeda.weather.R
+import ai.andromeda.weather.config.Config
 import ai.andromeda.weather.network.Weather
 import ai.andromeda.weather.repository.LocationRepository
 import ai.andromeda.weather.repository.WeatherRepository
 import android.app.Application
+import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -29,12 +31,14 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
     val location = locationRepository.location
     val weather = weatherRepository.weather
+    var previousLocation: String? = null
 
     private val _weatherData = MutableLiveData<LineData>()
     val weatherData: LiveData<LineData>
         get() = _weatherData
 
     init {
+        Log.i(Config.LOG_TAG, "INIT CALLED")
         refreshLocation()
     }
 
@@ -45,8 +49,11 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     fun refreshWeather() {
-        viewModelScope.launch {
-            weatherRepository.refreshWeather(location.value)
+        if (previousLocation != location.value) {
+            previousLocation = location.value
+            viewModelScope.launch {
+                weatherRepository.refreshWeather(location.value)
+            }
         }
     }
 

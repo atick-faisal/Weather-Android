@@ -283,6 +283,16 @@
 
     </GridLayout>
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="-8dp"
+        android:layout_alignTop="@+id/weatherChart"
+        android:text="@string/upcoming_48_hour_temperature"
+        android:textColor="@color/colorOnSurface"
+        android:textStyle="bold" />
+
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/weatherChart"
         android:layout_width="match_parent"
