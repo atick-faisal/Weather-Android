@@ -13,14 +13,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="@string/weather_forecast"
+        android:text="Rajpara, Rajshahi"
         android:textColor="@color/colorOnSurface"
         android:layout_marginTop="8dp"
         android:textSize="16sp"
         android:textStyle="bold"
-        tools:text="Weather Forecast" />
+        tools:text="Rajpara, Rajshahi" />
 
     <ImageView
+        android:contentDescription="@string/weather_icon"
         android:id="@+id/forecastIcon"
         android:layout_width="64dp"
         android:layout_height="64dp"
@@ -35,7 +36,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Haze"
+        android:textSize="16sp"
+        android:textColor="@color/colorOnSurface"
+        android:textStyle="bold"
+        android:layout_marginTop="4dp"
+        tools:text="Haze"
         android:layout_below="@id/forecastIcon"/>
 
     <TextView
@@ -45,27 +50,25 @@
         android:layout_below="@id/weatherDescription"
         android:layout_centerHorizontal="true"
         android:fontFamily="sans-serif-condensed"
-        android:text="30.0 C"
         android:textColor="@color/colorOnSurface"
         android:textSize="40sp"
         android:textStyle="bold"
         tools:text="30.0 C" />
 
     <TextView
-        android:id="@+id/locationText"
+        android:id="@+id/feelsLikeText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/temperatureText"
         android:layout_centerHorizontal="true"
-        android:textSize="18sp"
-        android:text="Rajpara, Rajshahi"
-        tools:text="Rajpara, Rajshahi" />
+        android:textSize="16sp"
+        tools:text="Feels Like 35 C" />
 
     <RelativeLayout
         android:id="@+id/afternoonCard"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/locationText"
+        android:layout_below="@id/feelsLikeText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="16dp"
         android:background="@drawable/afternoon_card">
@@ -76,12 +79,12 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:text="17:00"
+            android:text="@string/_17_00"
             android:textColor="@color/colorOnPrimary"
-            android:textStyle="bold"
-            tools:text="17:00" />
+            android:textStyle="bold" />
 
         <ImageView
+            android:contentDescription="@string/sunset"
             android:id="@+id/afternoonForecastIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
@@ -100,7 +103,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:fontFamily="sans-serif-condensed"
-            android:text="27.0 C"
             android:textColor="@color/colorOnPrimary"
             android:textStyle="bold"
             tools:text="27.0 C" />
@@ -111,7 +113,7 @@
         android:id="@+id/morningCard"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/locationText"
+        android:layout_below="@id/feelsLikeText"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_toStartOf="@id/afternoonCard"
@@ -123,12 +125,12 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
-            android:text="6.00"
+            android:text="@string/_6_00"
             android:textColor="@color/colorOnPrimary"
-            android:textStyle="bold"
-            tools:text="6:00" />
+            android:textStyle="bold" />
 
         <ImageView
+            android:contentDescription="@string/morning"
             android:id="@+id/morningForecastIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
@@ -147,7 +149,6 @@
             android:layout_marginTop="16dp"
             android:layout_marginBottom="16dp"
             android:fontFamily="sans-serif-condensed"
-            android:text="22.0 C"
             android:textColor="@color/colorOnPrimary"
             android:textStyle="bold"
             tools:text="22.0 C" />
@@ -158,7 +159,7 @@
         android:id="@+id/nightCard"
         android:layout_width="80dp"
         android:layout_height="wrap_content"
-        android:layout_below="@id/locationText"
+        android:layout_below="@id/feelsLikeText"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_toEndOf="@id/afternoonCard"
@@ -172,10 +173,10 @@
             android:layout_marginTop="16dp"
             android:textColor="@color/colorOnPrimary"
             android:textStyle="bold"
-            android:text="22:00"
-            tools:text="22:00" />
+            android:text="@string/_22_00" />
 
         <ImageView
+            android:contentDescription="@string/night"
             android:id="@+id/nightForecastIcon"
             android:layout_width="48dp"
             android:layout_height="48dp"
@@ -196,7 +197,6 @@
             android:fontFamily="sans-serif-condensed"
             android:textColor="@color/colorOnPrimary"
             android:textStyle="bold"
-            android:text="23.0 C"
             tools:text="23.0 C" />
 
     </RelativeLayout>
@@ -231,13 +231,13 @@
             android:textStyle="bold"
             android:layout_marginBottom="16dp"
             android:textColor="@color/colorOnSurface"
-            android:text="Wind"/>
+            android:text="@string/wind"/>
 
         <TextView
+            android:id="@+id/windText"
             android:layout_row="0"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:text="10km/h"/>
+            android:layout_columnWeight="1"/>
 
         <TextView
             android:layout_row="0"
@@ -245,13 +245,13 @@
             android:layout_columnWeight="1"
             android:textStyle="bold"
             android:textColor="@color/colorOnSurface"
-            android:text="Humidity"/>
+            android:text="@string/humidity"/>
 
         <TextView
+            android:id="@+id/humidityText"
             android:layout_row="0"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:text="88.0%"/>
+            android:layout_columnWeight="1"/>
 
         <TextView
             android:layout_row="1"
@@ -259,13 +259,13 @@
             android:layout_columnWeight="1"
             android:textStyle="bold"
             android:textColor="@color/colorOnSurface"
-            android:text="Visibility"/>
+            android:text="@string/visibility"/>
 
         <TextView
+            android:id="@+id/visibilityText"
             android:layout_row="1"
             android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:text="100Km"/>
+            android:layout_columnWeight="1"/>
 
         <TextView
             android:layout_row="1"
@@ -273,13 +273,13 @@
             android:layout_columnWeight="1"
             android:textStyle="bold"
             android:textColor="@color/colorOnSurface"
-            android:text="UV"/>
+            android:text="@string/uv"/>
 
         <TextView
+            android:id="@+id/uvText"
             android:layout_row="1"
             android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:text="1.0"/>
+            android:layout_columnWeight="1"/>
 
     </GridLayout>
 

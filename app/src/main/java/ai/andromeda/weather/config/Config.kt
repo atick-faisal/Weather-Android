@@ -7,4 +7,7 @@ object Config {
     const val PREFERENCE_NAME = "AI.ANDROMEDA.WEATHER.DATABASE"
     const val WEATHER_KEY = "AI.ANDROMEDA.WEATHER.KEY"
     const val LOCATION_KEY = "AI.ANDROMEDA.LOCATION.KEY"
+    const val MORNING = 6
+    const val AFTERNOON = 17
+    const val NIGHT = 22
 }
