@@ -26,17 +26,24 @@
         android:layout_height="64dp"
         android:layout_below="@+id/titleText"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/partlycloudy"
-        tools:src="@drawable/partlycloudy" />
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_01d"
+        tools:src="@drawable/ic_01d" />
+
+    <TextView
+        android:id="@+id/weatherDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Haze"
+        android:layout_below="@id/forecastIcon"/>
 
     <TextView
         android:id="@+id/temperatureText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/forecastIcon"
+        android:layout_below="@id/weatherDescription"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-condensed"
         android:text="30.0 C"
         android:textColor="@color/colorOnSurface"

@@ -1,12 +1,10 @@
 package ai.andromeda.weather.home
 
 import ai.andromeda.weather.R
-import ai.andromeda.weather.config.Config
 import ai.andromeda.weather.network.Weather
 import ai.andromeda.weather.repository.LocationRepository
 import ai.andromeda.weather.repository.WeatherRepository
 import android.app.Application
-import android.util.Log
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -59,7 +57,6 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
             for (hour in hourly) {
                 tempValues.add(hour.temp)
             }
-            Log.i(Config.LOG_TAG, "HOME_VM: HOURLY DATA LENGTH ${tempValues}")
             val tempItems: MutableList<Entry> = mutableListOf()
             tempValues.forEachIndexed { index, value ->
                 tempItems.add(Entry(index.toFloat(), value.toFloat()))

@@ -1,6 +1,8 @@
 package ai.andromeda.weather.home
 
+import ai.andromeda.weather.BuildConfig
 import ai.andromeda.weather.R
+import ai.andromeda.weather.network.Weather
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -41,6 +43,7 @@ class HomeFragment : Fragment() {
         viewModel.weather.observe(viewLifecycleOwner, {
             it?.let {
                 viewModel.updateChartData(it)
+                updateUI(it)
                 // rootView.apiResponseText.text = it.toString()
             }
         })
@@ -66,5 +69,19 @@ class HomeFragment : Fragment() {
         rootView.weatherChart.xAxis.setDrawAxisLine(false)
         rootView.weatherChart.legend.isEnabled = true
         rootView.weatherChart.setTouchEnabled(false)
+    }
+
+    private fun updateUI(weather: Weather) {
+        try {
+            val forecastIcon = resources.getIdentifier(
+                "ic_${weather.current.status[0].icon}",
+                "drawable",
+                BuildConfig.APPLICATION_ID
+            )
+            rootView.forecastIcon.setImageResource(forecastIcon)
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
     }
 }
