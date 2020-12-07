@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".week.WeekFragment">
+
+    <TextView
+        android:id="@+id/weekDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:textColor="@color/colorOnSurface"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/forecastIcon"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:layout_below="@+id/weekDay"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/weather_icon"
+        android:src="@drawable/ic_01d"
+        tools:src="@drawable/ic_01d" />
+
+    <TextView
+        android:id="@+id/weatherDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/forecastIcon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="4dp"
+        android:textColor="@color/colorOnSurface"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:text="Haze" />
+
+    <TextView
+        android:id="@+id/temperatureText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/weatherDescription"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="sans-serif-condensed"
+        android:textColor="@color/colorOnSurface"
+        android:textSize="32sp"
+        android:textStyle="bold"
+        tools:text="↑ 30.0 C ↓ 21.9 C" />
+
+    <RelativeLayout
+        android:id="@+id/afternoonCard"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/temperatureText"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/afternoon_card">
+
+        <TextView
+            android:id="@+id/afternoonTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/_17_00"
+            android:textColor="@color/colorOnPrimary"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/afternoonForecastIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/afternoonTimeText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/sunset"
+            app:srcCompat="@drawable/ic_sunset"
+            tools:srcCompat="@drawable/ic_sunset" />
+
+        <TextView
+            android:id="@+id/afternoonTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/afternoonForecastIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorOnPrimary"
+            android:textStyle="bold"
+            tools:text="27.0 C" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/morningCard"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/temperatureText"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_toStartOf="@id/afternoonCard"
+        android:background="@drawable/morning_card">
+
+        <TextView
+            android:id="@+id/morningTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/_6_00"
+            android:textColor="@color/colorOnPrimary"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/morningForecastIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/morningTimeText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/morning"
+            app:srcCompat="@drawable/ic_sunrise"
+            tools:srcCompat="@drawable/ic_sunrise" />
+
+        <TextView
+            android:id="@+id/morningTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/morningForecastIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorOnPrimary"
+            android:textStyle="bold"
+            tools:text="22.0 C" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/nightCard"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/temperatureText"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/afternoonCard"
+        android:background="@drawable/night_card">
+
+        <TextView
+            android:id="@+id/nightTimeText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:text="@string/_22_00"
+            android:textColor="@color/colorOnPrimary"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/nightForecastIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/nightTimeText"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/night"
+            app:srcCompat="@drawable/ic_night"
+            tools:srcCompat="@drawable/ic_night" />
+
+        <TextView
+            android:id="@+id/nightTemperature"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/nightForecastIcon"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textColor="@color/colorOnPrimary"
+            android:textStyle="bold"
+            tools:text="23.0 C" />
+
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="260dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/week_gradient"/>
+
+    <RelativeLayout
+        android:id="@+id/weekDay4"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/outlined_card"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/day4Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorOnSurface"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/day4WeatherIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/day4Name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/weather_icon"
+            tools:srcCompat="@drawable/ic_01d" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/weekDay3"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_toStartOf="@+id/weekDay4"
+        android:background="@drawable/outlined_card"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/day3Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorOnSurface"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/day3WeatherIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/day3Name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/weather_icon"
+            tools:srcCompat="@drawable/ic_01d" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/weekDay5"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_toEndOf="@+id/weekDay4"
+        android:background="@drawable/outlined_card"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/day5Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorOnSurface"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/day5WeatherIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/day5Name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/weather_icon"
+            tools:srcCompat="@drawable/ic_01d" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/weekDay1"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/weekDay5"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="-120dp"
+        android:background="@drawable/outlined_card"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/day1Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorOnSurface"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/day1WeatherIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/day1Name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/weather_icon"
+            tools:srcCompat="@drawable/ic_01d" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/weekDay0"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/weekDay3"
+        android:layout_toStartOf="@+id/weekDay1"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="-120dp"
+        android:background="@drawable/outlined_card"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/day0Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorOnSurface"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/day0WeatherIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/day0Name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/weather_icon"
+            tools:srcCompat="@drawable/ic_01d" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/weekDay2"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/weekDay3"
+        android:layout_toEndOf="@+id/weekDay1"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="-120dp"
+        android:background="@drawable/outlined_card"
+        android:clickable="true"
+        android:focusable="true">
+
+        <TextView
+            android:id="@+id/day2Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/colorOnSurface"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/day2WeatherIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_below="@id/day2Name"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/weather_icon"
+            tools:srcCompat="@drawable/ic_01d" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

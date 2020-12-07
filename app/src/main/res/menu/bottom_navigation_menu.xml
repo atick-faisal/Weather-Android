@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:title="Current"
+        android:icon="@drawable/ic_current"/>
+
+    <item
+        android:id="@+id/ExtrasFragment"
+        android:title="Extras"
+        android:icon="@drawable/ic_extras"/>
+
+    <item
+        android:id="@+id/weekFragment"
+        android:title="Week"
+        android:icon="@drawable/ic_week"/>
+
+    <item
+        android:id="@+id/worldFragment"
+        android:title="Explore"
+        android:icon="@drawable/ic_explore"/>
+
+    <item
+        android:id="@+id/moreFragment"
+        android:title="More"
+        android:icon="@drawable/ic_more"/>
+</menu>
