@@ -1,9 +1,8 @@
 package ai.atick.weather;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.os.AsyncTask;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -25,7 +24,7 @@ import java.text.DateFormatSymbols;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends Activity {
 
     private TextView celsius, fahrenheit, clock, temperature, forecast, weekDay;
     private LinearLayout location;
@@ -40,13 +39,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        /////////////////////////////////////////////
-        ActionBar actionBar = getSupportActionBar();
-        if(actionBar != null) {
-            actionBar.hide();
-        }
-        /////////////////////////////////////////////
 
         celsius = findViewById(R.id.celsius);
         fahrenheit = findViewById(R.id.fahrenheit);
